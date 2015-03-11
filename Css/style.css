@@ -1,14 +1,19 @@
 /** Accueil **/
 #Ent_div {
-	width: 60px;
-	height: 60px;
+	width: 5px;
+	height: 5px;
 	margin-top: 10%;
 }
-
+#divacc {
+	margin-bottom: 10%;
+}
 /** Index **/
 #Ind_ptitimg {
 	width: 30px;
 	height: 30px;
+}
+.footerAccueil{
+	margin-top: 3%;
 }
 
 /** Entreprise **/
@@ -22,7 +27,7 @@
 	width: 48.5%;
 	height: 50px;
 	margin-right: 1%;
-	margin-left: 0.5%;
+	margin-left: 1%;
 	padding: 1%;
 	cursor: pointer;	
 }

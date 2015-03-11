@@ -11,7 +11,10 @@
 		<script src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>
 		<script type="text/javascript" src="custom.js"></script>
 
-		<title> A la rencontre des Entreprises </title>
+		<title> A la rencontre des Entreprises </title>		
+		<link rel="stylesheet" type="text/css" href="BackgroundSlideshow/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="BackgroundSlideshow/css/component.css" />
+		<script src="BackgroundSlideshow/js/modernizr.custom.js"></script>
 
 		<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,800,500,600">
 		<link href="HoverEffectIdeas/css/normalize.css" type="text/css" rel="stylesheet">
@@ -19,7 +22,6 @@
 		<link href="HoverEffectIdeas/css/set2.css" type="text/css" rel="stylesheet">
 		<link href="HoverEffectIdeas/fonts/font-awesome-4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 <!--		<script type="text/javascript">  -->
-
 	</head>
 
 	<body>
@@ -55,10 +57,19 @@
 				include("Php/redirection.php"); // redirection des pages en fonction des ?...
 			?>
 		</div>
-		<footer class="bs-docs-footer" role="contentinfo">
+		<!-- Le carrousel -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="BackgroundSlideshow/js/jquery.imagesloaded.min.js"></script>
+		<script src="BackgroundSlideshow/js/cbpBGSlideshow.min.js"></script>
+		<script>
+			$(function() {
+				cbpBGSlideshow.init();
+			});
+		</script>
+		<footer class="bs-docs-footer footerAccueil" role="contentinfo">
 			<div class="container">
 				<ul class="bs-docs-footer-links text-muted">
-					<li>Currently v0.0.3</li>
+					<li>Currently v0.0.5</li>
 				</ul>
 			</div>
 		</footer>
