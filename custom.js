@@ -19,7 +19,7 @@ jQuery(document).ready(function()
 		jQuery('#atooz').css('background-color', '#CBD3D3');
 		
 		jQuery.ajax({
-			url: "Php/AaZ.php",
+			url: "Php/ParDomaine.php",
 			}).done(function(result){
 	        	jQuery("#divEntre").html(result);
  			});

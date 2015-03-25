@@ -11,7 +11,7 @@ try
 		die();
 	}
 //recupere tout la table contact par ordre decroissante des dates
- $reponse = $connexion->prepare('SELECT nom  FROM entreprise WHERE id = 2 ORDER BY nom ASC');
+ $reponse = $connexion->prepare('SELECT nom  FROM entreprise WHERE id = 1 ORDER BY domaine ASC');
  $reponse->execute();
 // On affiche les resultats
 $donnees = $reponse->fetchAll();
