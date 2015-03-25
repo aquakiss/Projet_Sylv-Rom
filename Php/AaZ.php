@@ -18,8 +18,7 @@ $donnees = $reponse->fetchAll();
 
 //tableau d'image -  a changer avec les vrais
 $images = array(
-	'16',
-	'26'
+	'16'
 );
 foreach ($donnees as $donnee) {
 ?>
@@ -34,7 +33,7 @@ foreach ($donnees as $donnee) {
 				<figcaption>
 					<h2>Noisy <span>Terry</span></h2>
 					<p>
-						<a href="#"><i class="fa fa-fw fa-download"></i></a>
+						<a href="?Accueil"><i class="fa fa-fw fa-home"></i></a>
 						<a href="#"><i class="fa fa-fw fa-heart"></i></a>
 						<a href="#"><i class="fa fa-fw fa-share"></i></a>
 						<a href="#"><i class="fa fa-fw fa-tags"></i></a>
@@ -48,29 +47,4 @@ foreach ($donnees as $donnee) {
 	<?php
 }
 ?>
-<!--
-<div>
-<section class="grid" id="Ent_div">
-	<figure class="effect-kira">
-		<img alt="img17" src="HoverEffectIdeas/img/17.jpg">
-			<figcaption>
-			<!--	<h2> Dark <span>entreprise</span>	</h2> 
-			<p>
-				<a href="?Accueil">
-					<i class="fa fa-fw fa-home"></i>
-				</a>
-				<a href="#">
-					<i class="fa fa-fw fa-download"></i>
-				</a>
-				<a href="#">
-					<i class="fa fa-fw fa-heart"></i>
-				</a>
-			<!--<a href="#">
-						<i class="fa fa-fw fa-share"></i>
-				</a>  	
-			</p>
-		</figcaption>
-	</figure>
-</section>
-</div>
--->
+
