@@ -11,7 +11,7 @@ try
 		die();
 	}
 //recupere tout la table contact par ordre decroissante des dates
- $reponse = $connexion->prepare('SELECT nom  FROM entreprise ORDER BY nom ASC');
+ $reponse = $connexion->prepare('SELECT nom  FROM entreprise WHERE id = 1 ORDER BY nom ASC');
  $reponse->execute();
 // On affiche les resultats
 $donnees = $reponse->fetchAll();
@@ -22,8 +22,8 @@ $images = array(
 );
 foreach ($donnees as $donnee) {
 ?>
-	<h2><?php echo $donnee['nom']; ?></h2>
-	<div class="grid">
+	<div class="grid" id="h2AtooZdiv">
+		<h2 id="h2AtooZ"><?php echo $donnee['nom']; ?></h2>
 		<?php
 		foreach ($images as $imagesansS)
 		{

@@ -5,15 +5,20 @@
 	margin-top: 10%;
 }
 #divacc {
-	margin-bottom: 10%;
+	margin-bottom: 11%;
 }
 /** Index **/
+#Bt-accI{
+	margin-right: 2%;
+	margin-bottom: 12px;
+}
 #Ind_ptitimg {
-	width: 30px;
-	height: 30px;
+	width: 38px;
+	height: 36px;
+	margin-right: 2%;
 }
 .footerAccueil{
-	margin-top: 3%;
+	margin-top: 10%;
 }
 
 /** Entreprise **/
@@ -51,4 +56,13 @@
 
 .entborder {
 	border-color: red;
+}
+
+/** AaZ **/
+#h2AtooZ {
+	margin-right: 5%;
+}
+#h2AtooZdiv{
+	margin: 0.5%;
+	padding: 0.2%;
 }
