@@ -1,21 +1,59 @@
 <!-- Page de contact -->
-<div id="formul">
-	<form method="post" id="gform">
-		<fieldset>
-			<h2><b>Pour nous contacter: </b></h2>
-			<section>
-				<label>Prénom</label>
-				<input name="firstname" class="inpform" type="text" required="required" placeholder="à remplir" style="width:200px; margin-top: 1.5%;"/><br/>
-				<label>Nom</label>
-				<input name="name"name type="text" required="required" placeholder="à remplir" style="width:200px; margin-top: 1%; margin-left: 3.9%;"/><br/>
-				<label>Le sujet</label>
-				<input name="sujet" class="inpform" type="text" required="required" placeholder="à remplir" style="width:200px; margin-top: 1%;"/><br/>			
-				<textarea name="comment" cols="100" style="margin: 2%;" placeholder="... Ici votre message ..."></textarea>
-				<input class="btn btn-default" type="submit" value="Envoie du formulaire" style="margin-left: 24.80%; margin-bottom:1%;"/>
-			</section>
-		</fieldset>
-	</form>
-</div>
+<div class="container">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Nous Contacter</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="last_name" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="first_name" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Adresse Email">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="sujet" name="sujet" id="sujet" class="form-control input-sm" placeholder="Sujet">
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="3" placeholder="Votre Message"></textarea>
+                            </div>
+
+                            <input type="submit" value="Envoie" class="btn btn-info btn-block">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<style>
+
+
+.centered-form {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+</style>
 
 <?php /*
 	// connexion a la bdd

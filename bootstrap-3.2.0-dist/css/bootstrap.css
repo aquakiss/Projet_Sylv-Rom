@@ -2355,7 +2355,7 @@ output {
   width: 100%;
   height: 34px;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #555;
   background-color: #fff;
@@ -2893,7 +2893,7 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
+  background-color: #1abc9c;
   border-color: #46b8da;
 }
 .btn-info:hover,
