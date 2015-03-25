@@ -2,8 +2,8 @@ jQuery(document).ready(function()
 {
 	jQuery('#atooz').click(function(event) {
 		event.preventDefault();
-		jQuery('#atooz').css('background-color', 'white');
-		jQuery('#todomaine').css('background-color', '#CBD3C3');
+		jQuery('#atooz').css('background-color', '#CCCCFF');
+		jQuery('#todomaine').css('background-color', '#ECF0F1');
 
 		jQuery.ajax({			
 			url: "Php/AaZ.php",
@@ -15,8 +15,8 @@ jQuery(document).ready(function()
 
 	jQuery('#todomaine').click(function( event ) {
 		event.preventDefault();
-		jQuery('#todomaine').css('background-color', 'white');
-		jQuery('#atooz').css('background-color', '#CBD3D3');
+		jQuery('#todomaine').css('background-color', '#CCCCFF');
+		jQuery('#atooz').css('background-color', '#ECF0F1');
 		
 		jQuery.ajax({
 			url: "Php/ParDomaine.php",

@@ -11,7 +11,7 @@
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="last_name" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom">
+                                        <input required="required" type="last_name" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
@@ -22,15 +22,15 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Adresse Email">
+                                <input required="required" type="email" name="email" id="email" class="form-control input-sm" placeholder="Adresse Email">
                             </div>
 
                             <div class="form-group">
-                                <input type="sujet" name="sujet" id="sujet" class="form-control input-sm" placeholder="Sujet">
+                                <input required="required" type="sujet" name="sujet" id="sujet" class="form-control input-sm" placeholder="Sujet">
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="3" placeholder="Votre Message"></textarea>
+                                <textarea required="required" class="form-control" name="message" rows="3" placeholder="Votre Message"></textarea>
                             </div>
 
                             <input type="submit" value="Envoie" class="btn btn-info btn-block">
