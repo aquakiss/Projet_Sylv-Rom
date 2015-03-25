@@ -1,15 +1,15 @@
 jQuery(document).ready(function()
 {
-	jQuery('#atooz').click(function(e) {
-		e.preventDefault();
+	jQuery('#atooz').click(function(event) {
+		event.preventDefault();
 		jQuery('#atooz').css('background-color', 'white');
 		jQuery('#todomaine').css('background-color', '#CBD3C3');
-		
-		jQuery.ajax({
+
+		jQuery.ajax({			
 			url: "Php/AaZ.php",
 		}).done(function(result)
 		{
-	    	jQuery("#divEntre").html(result);
+	    	jQuery("#divEntreA").html(result);
 		});
 	});
 
@@ -21,7 +21,7 @@ jQuery(document).ready(function()
 		jQuery.ajax({
 			url: "Php/ParDomaine.php",
 			}).done(function(result){
-	        	jQuery("#divEntre").html(result);
+	        	jQuery("#divEntreA").html(result);
  			});
 		});
 });

@@ -22,7 +22,10 @@
 }
 
 /** Entreprise **/
-#divEntre {
+#divEntreA {
+	margin-top: 1%; 
+}
+#divEntreD {
 	margin-top: 1%; 
 }
 #atooz {
@@ -61,8 +64,17 @@
 /** AaZ **/
 #h2AtooZ {
 	margin-right: 5%;
+	font-size: 21px;
+	font-family: "Adobe Caslon Pro", Times, serif;
 }
 #h2AtooZdiv{
-	margin: 0.5%;
+	float: left;
+	margin-left: 12%;
+	margin-top: 2%;
+	padding: 0.2%;
+}
+#h2Domaindiv{
+	float: right;
+	margin: 2%;
 	padding: 0.2%;
 }
