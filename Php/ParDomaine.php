@@ -23,10 +23,25 @@ $donnees = $reponse->fetchAll();
 foreach ($donnees as $donnee) {
 	$tmp = $donnee['categorie'];
 ?>
-<div>
+<!-- <div> 
 	<a id=" <?php echo $tmp  ?>" ></a>
-</div>
-
+</div>   -->
+<div class="dropdown DDDomain">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdown<?php echo $tmp ?>" data-toggle="dropdown" aria-expanded="true">
+    <?php echo $tmp  ?>  
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdownCategori dropdown-menu dropdown-menu-right" aria-labelledby="dropdown<?php echo $tmp ?>">
+    <li role="presentation"><a  href="./Ajax.php?internat">A l'internationale</a></li>
+    <li role="presentation"><a  href="./Ajax.php?departm">Par Département</a></li>
+    <li role="presentation"><a  href="./Ajax.php?employ">Par nombre d'employées</a></li>
+    <li role="presentation"><a  href="./Ajax.php?azcateg">Par ordre alphabétique</a></li>
+  </ul>
+</div>  
 <?php 
 } 
 ?>
+<div class="clearfix"></div>
+<div class="col-xs-6 div-left"></div>
+<div class="col-xs-6 div-right"></div>
+

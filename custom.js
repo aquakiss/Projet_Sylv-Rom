@@ -24,4 +24,18 @@ jQuery(document).ready(function()
 	        	jQuery("#divEntre").html(result);
  			});
 		});
+
+
+	//regarde dans le body si on click sur l'element
+	jQuery('body').on('click', '.dropdownCategori a', function(e) {
+		e.preventDefault();
+		var urlToCall = jQuery(this).attr("href");
+		
+		jQuery.ajax({
+			url: urlToCall,
+		}).done(function(result)
+		{
+	    	jQuery(".div-right").html(result);
+		}); 
+	});
 });

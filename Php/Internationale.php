@@ -1,4 +1,4 @@
-<!-- Page recherche A...Z -->
+<!-- Recherche à l'international-->
 <?php
 try
 	{
@@ -10,8 +10,12 @@ try
 		echo 'Echec lors de la tentative de connexion à la Base de donées' . $e->getMessage();
 		die();
 	}
-//recupere tout la table contact par ordre decroissante des dates
- $reponse = $connexion->prepare('SELECT nom  FROM entreprise ORDER BY nom ASC');
+
+/**
+** Partie Recuperer les entreprises par domaine et les afficher
+**/	
+//recupere tout la table enterprise par ordre croissante des domaines
+ $reponse = $connexion->prepare('SELECT nom FROM entreprise ORDER BY international DESC');
  $reponse->execute();
 // On affiche les resultats
 $donnees = $reponse->fetchAll();
@@ -22,7 +26,7 @@ $images = array(
 );
 foreach ($donnees as $donnee) {
 ?>
-	<div class="grid" id="h2AtooZdiv">
+	<div class="grid" id="PInterna">
 		<?php
 		foreach ($images as $imagesansS)
 		{
@@ -46,4 +50,3 @@ foreach ($donnees as $donnee) {
 	<?php
 }
 ?>
-

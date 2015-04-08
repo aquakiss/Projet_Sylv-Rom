@@ -1,4 +1,4 @@
-<!-- Page recherche A...Z -->
+<!-- Recherche departemental-->
 <?php
 try
 	{
@@ -10,8 +10,12 @@ try
 		echo 'Echec lors de la tentative de connexion à la Base de donées' . $e->getMessage();
 		die();
 	}
-//recupere tout la table contact par ordre decroissante des dates
- $reponse = $connexion->prepare('SELECT nom  FROM entreprise ORDER BY nom ASC');
+
+/**
+** Partie Recuperer les entreprises par domaine et les afficher
+**/	
+//recupere tout la table enterprise par ordre croissante des domaines
+ $reponse = $connexion->prepare('SELECT nom FROM entreprise ORDER BY departement ASC');
  $reponse->execute();
 // On affiche les resultats
 $donnees = $reponse->fetchAll();
@@ -22,7 +26,7 @@ $images = array(
 );
 foreach ($donnees as $donnee) {
 ?>
-	<div class="grid" id="h2AtooZdiv">
+	<div class="grid" id="PInterna">
 		<?php
 		foreach ($images as $imagesansS)
 		{
@@ -33,7 +37,7 @@ foreach ($donnees as $donnee) {
 					<h2 id="h2AtooZ"><?php echo $donnee['nom']; ?></h2>
 					<p>
 						<a href="?Accueil"><i class="fa fa-fw fa-home"></i></a>
-						<a href="#"><i class="fa fa-fw fa-heart"></i></a>
+						<a href="?departs"><i class="fa fa-fw fa-heart"></i></a>
 						<a href="#"><i class="fa fa-fw fa-share"></i></a>
 						<a href="#"><i class="fa fa-fw fa-tags"></i></a>
 					</p>
@@ -46,4 +50,3 @@ foreach ($donnees as $donnee) {
 	<?php
 }
 ?>
-
