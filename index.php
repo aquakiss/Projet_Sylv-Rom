@@ -2,6 +2,7 @@
 	try
 	{
 		$connexion = new PDO('mysql:host=localhost;dbname=enterprise', 'root', '');
+		$connexion->exec("SET CHARACTER SET utf8");
 	}
 	catch(Exception $e)
 	{
@@ -19,10 +20,10 @@
 		$rech = str_replace('%', '', $rech);
 		$rech = str_replace('_', '', $rech);
 
-		$like = $rech . '%';
+		$like = '%' . $rech . '%';
 
 		// On prépare la requête 
-		$req = $connexion->prepare(" SELECT nom FROM entreprise 
+		$req = $connexion->prepare(" SELECT nom, domaine, presentation FROM entreprise 
 									WHERE nom LIKE :like"
 			);
 		//execution de la requête
@@ -30,6 +31,8 @@
 				'like' => $like,
 		));
 		$valide = true;
+
+				
 	}
 ?>
 
@@ -80,7 +83,7 @@
 			      </ul>
 			      <form class="navbar-form navbar-left" role="search" action="" method="GET">
 			        <div class="form-group">
-			          <input type="text" class="form-control" name="recherche" placeholder="nom de l'entreprise">
+			          <input required="required" type="text" class="form-control" name="recherche" placeholder="nom de l'entreprise">
 			        </div>
 			        <button name="search" type="submit" class="btn btn-default">Recherche</button>
 			      </form>
