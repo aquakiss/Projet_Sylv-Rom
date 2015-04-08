@@ -24,7 +24,7 @@
 
 		// On prépare la requête 
 		$req = $connexion->prepare(" SELECT nom, domaine, presentation FROM entreprise 
-									WHERE nom LIKE :like"
+									WHERE nom LIKE :like ORDER BY nom"
 			);
 		//execution de la requête
 		$req->execute(array(	
