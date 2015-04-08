@@ -1,3 +1,41 @@
+<?php
+	try
+	{
+		$connexion = new PDO('mysql:host=localhost;dbname=enterprise', 'root', '');
+		$connexion->exec("SET CHARACTER SET utf8");
+	}
+	catch(Exception $e)
+	{
+		die('Erreur :' . $e->getMessage());
+	}
+	
+	$valide = false;
+	// Début du traitement de la page 
+	// On vérifie que toutes les colonnes sont bien complétées
+	if(!empty($_GET["recherche"]))
+	{
+		// On mets les valeurs dans des variables
+		$rech = $_GET["recherche"];
+
+		$rech = str_replace('%', '', $rech);
+		$rech = str_replace('_', '', $rech);
+
+		$like = '%' . $rech . '%';
+
+		// On prépare la requête 
+		$req = $connexion->prepare(" SELECT nom, domaine, presentation FROM entreprise 
+									WHERE nom LIKE :like ORDER BY nom"
+			);
+		//execution de la requête
+		$req->execute(array(	
+				'like' => $like,
+		));
+		$valide = true;
+
+				
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 	<head>		
@@ -43,9 +81,9 @@
 			      <ul class="nav navbar-nav">
 			        <li><a href="#">Entreprises partenaires</a></li>
 			      </ul>
-			      <form class="navbar-form navbar-left" role="search">
+			      <form class="navbar-form navbar-left" role="search" action="" method="GET">
 			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="nom de l'entreprise">
+			          <input required="required" type="text" class="form-control" name="recherche" placeholder="nom de l'entreprise">
 			        </div>
 			        <button name="search" type="submit" class="btn btn-default">Recherche</button>
 			      </form>
@@ -60,7 +98,12 @@
 		</div>
 		<div>
 			<?php
-				include("Php/redirection.php"); // redirection des pages en fonction des ?...
+				if($valide){
+					include("Php/result_rec.php");
+				}
+				else{
+					include("Php/redirection.php"); // redirection des pages en fonction des ?...
+				}
 			?>
 		</div>
 		<!-- Le carrousel -->
@@ -81,3 +124,4 @@
 		</footer>
 	</body>
 </html>
+

@@ -22,10 +22,7 @@
 }
 
 /** Entreprise **/
-#divEntreA {
-	margin-top: 1%; 
-}
-#divEntreD {
+#divEntre {
 	margin-top: 1%; 
 }
 #atooz {
@@ -37,8 +34,7 @@
 	margin-right: 1%;
 	margin-left: 1%;
 	padding: 1%;
-	cursor: pointer;
-	color : black;
+	cursor: pointer;	
 }
 
 #todomaine {
@@ -50,12 +46,11 @@
 	margin-right: 1%;
 	padding: 1%;
 	cursor: pointer;
-	color : black;
 }
 
 .Enttitle {
-	font-size: 25px;
-	font-family: "Angsana New", Times, serif;
+	font-size: 20px;
+	font-family: "Adobe Caslon Pro", Times, serif;
 	text-shadow:0 0 3px #F8F8FF;
 }
 
@@ -69,15 +64,14 @@
 }
 #h2AtooZ {
 	margin-right: 5%;
-	font-size: 21px;
-	font-family: "Adobe Caslon Pro", Times, serif;
 }
 #h2AtooZdiv{
+
 	float: left;
 	margin-left: 12%;
 	margin-top: 0.5%;
 	padding: 0.2%;
-}
+
 #h2Domaindiv{
 	float: right;
 	margin-left: 2%;
