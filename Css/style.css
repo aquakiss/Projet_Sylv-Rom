@@ -64,6 +64,9 @@
 }
 
 /** AaZ **/
+#hCategordiv{
+	
+}
 #h2AtooZ {
 	margin-right: 5%;
 	font-size: 21px;
@@ -72,11 +75,14 @@
 #h2AtooZdiv{
 	float: left;
 	margin-left: 12%;
-	margin-top: 2%;
+	margin-top: 0.5%;
 	padding: 0.2%;
 }
 #h2Domaindiv{
 	float: right;
-	margin: 2%;
+	margin-left: 2%;
+	margin-top: 0.5%;
+	margin-right: 2%;
+	margin-bottom: 0.5%;
 	padding: 0.2%;
 }

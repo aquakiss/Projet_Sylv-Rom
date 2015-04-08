@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 11 Mars 2015 à 16:41
+-- Généré le :  Mer 08 Avril 2015 à 10:36
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `nom` varchar(255) NOT NULL,
   `nb_employe` int(11) NOT NULL,
   `departement` varchar(255) NOT NULL,
-  `domaine` varchar(255) NOT NULL,
+  `domaine` varchar(255) NOT NULL COMMENT 'domaine de entreprise',
+  `categorie` varchar(255) NOT NULL COMMENT 'domaine',
   `description` text NOT NULL,
   `presentation` varchar(255) NOT NULL,
   `lien_interview` varchar(255) NOT NULL,
@@ -43,10 +44,10 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 -- Contenu de la table `entreprise`
 --
 
-INSERT INTO `entreprise` (`id`, `nom`, `nb_employe`, `departement`, `domaine`, `description`, `presentation`, `lien_interview`, `international`) VALUES
-(1, 'L''Oréal', 75000, '', 'Cosmétique', '', 'L’Oréal est un groupe industriel français de produits cosmétiques.', '', 1),
-(3, 'Biorg', 22, '', 'Moléculaire', '', '', '', 0),
-(4, 'Hanculus', 5, '', 'Informatique', '', '', '', 0);
+INSERT INTO `entreprise` (`id`, `nom`, `nb_employe`, `departement`, `domaine`, `categorie`, `description`, `presentation`, `lien_interview`, `international`) VALUES
+(1, 'L''Oréal', 75000, 'charleaner', 'Cosmétique', 'Bio', '', 'L’Oréal est un groupe industriel français de produits cosmétiques.', '', 1),
+(3, 'Biorg', 22, 'Creux et vide', 'Moléculaire', 'Chimie', '', '', '', 0),
+(4, 'Hanculus', 5, 'aquinaik', 'Informatique', 'Informatique', '', '', '', 0);
 
 -- --------------------------------------------------------
 
