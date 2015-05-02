@@ -17,15 +17,23 @@
 	}
 	elseif(isset($_GET["departm"]))
 	{
-	 	include("Php/P_Department.php");  // page du recherche internationale
+	 	include("Php/P_Department.php");  // page du recherche departement
 	}
 	elseif(isset($_GET["employ"]))
 	{
-	 	include("Php/Employee.php");  // page du recherche internationale
+	 	include("Php/Employee.php");  // page Recherche par nombre employees
 	}
 	elseif(isset($_GET["azcateg"]))
 	{
-	 	include("Php/AaZ_pourCategories.php");  // page du recherche internationale
+	 	include("Php/AaZ_pourCategories.php");  // page du recherche categories
+	}
+	elseif(isset($_GET["CoAdm"]))
+	{
+	 	include("Php/page_coAdm.php");  // page de connection de l'admin
+	}
+	elseif(isset($_GET["Adm"]))
+	{
+	 	include("page_AccueilAdmin.php");  // page de l'admin
 	}
 	else{
 		include("Php/accueil.php"); // par défault page d'acceuil.

@@ -88,6 +88,7 @@
 			        <button name="search" type="submit" class="btn btn-default">Recherche</button>
 			      </form>
 			      <ul class="nav navbar-nav navbar-right">
+			      	<li><a class="navbar-brand" href="?CoAdm">Connection</a></li>
 			        <li><a href="#">À propos</a></li>
 			        <li><a href="?contactPro">Nous Contacter</a></li> <!-- mettre un id pour décaller vers la gauche -->
 			      </ul>
@@ -99,10 +100,10 @@
 		<div>
 			<?php
 				if($valide){
-					include("Php/result_rec.php");
+					include("Php/result_rec.php"); // redirect vers page du resultat de la recherche.
 				}
 				else{
-					include("Php/redirection.php"); // redirection des pages en fonction des ?...
+					include("Php/Redirection.php"); // redirection des pages en fonction des ?...
 				}
 			?>
 		</div>
@@ -118,7 +119,8 @@
 		<footer class="bs-docs-footer footerAccueil" role="contentinfo">
 			<div class="container">
 				<ul class="bs-docs-footer-links text-muted">
-					<li>Currently v0.0.5</li>
+					<li>Currently v0.0.6
+					</li>
 				</ul>
 			</div>
 		</footer>
