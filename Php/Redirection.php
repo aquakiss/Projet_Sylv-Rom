@@ -35,6 +35,10 @@
 	{
 	 	include("page_AccueilAdmin.php");  // page de l'admin
 	}
+	elseif (isset($_GET["parten"]))
+	{
+		include("Php/page_Entpart.php");   // page des entreprises partenaires
+	}
 	else{
 		include("Php/accueil.php"); // par défault page d'acceuil.
 	}

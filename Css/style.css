@@ -99,3 +99,11 @@
 #ZAddecal{
 	margin-left: 30%;
 }
+
+/** PAge des partenaires **/
+#PatColorh1{
+	font-family: "Adobe Caslon Pro", Times, serif;
+	color: black;
+	font-size: 31px;
+	text-align: center;
+}
