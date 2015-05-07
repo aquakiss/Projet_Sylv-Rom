@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	try
 	{
 		$connexion = new PDO('mysql:host=localhost;dbname=enterprise', 'root', '');
@@ -88,7 +89,20 @@
 			        <button name="search" type="submit" class="btn btn-default">Recherche</button>
 			      </form>
 			      <ul class="nav navbar-nav navbar-right">
-			      	<li><a href="?CoAdm">Connexion</a></li>
+			      	<?php 
+			      	/*	if($_SESSION["newsession"] == 1) { 
+			      	?>
+			      			<li><a href="?DecoAdm">Déconnexion</a></li>
+			      	<?php
+			      		}
+			      		else
+			      		{ 
+			      	*/?>
+			      			<li><a href="?CoAdm">Connexion</a></li>
+			      	<?php/*
+			      	}
+					*/
+			      	?>
 			        <li><a href="#">À propos</a></li>
 			        <li><a href="?contactPro">Nous Contacter</a></li> <!-- mettre un id pour décaller vers la gauche -->
 			      </ul>
