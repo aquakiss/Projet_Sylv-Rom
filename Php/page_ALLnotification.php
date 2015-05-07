@@ -1,7 +1,8 @@
 <!-- page d'affichage des notification de la table contact-->
 <div>
-	<h1 class="text-center"><blockquote>Récentes notifications :</blockquote></h1> 		
+	<h1 class="text-center"><blockquote>Récentes cocou notifications :</blockquote></h1>  
 </div>
+
 <?php
 try
 	{
@@ -28,25 +29,19 @@ try
  		<td><i><u>Email: </u></i></td>
  		<td><i><u>Date: </u></i></td>
 
-	</tr>
-	<?php
-	$isVu = 0;
-	foreach($donnees as $row){
-	 	if($row['vue'] == 0){ 
-	  		$isVu ++; 
-	?><tr>
-		   	<td><?php echo $row['nom']; ?></td>
-		   	<td><?php echo $row['prenom']; ?></td>
-		   	<td><?php echo $row['sujet']; ?></td>
-		   	<td><?php echo $row['message']; ?></td>
-		   	<td><?php echo $row['email']; ?></td>
-			<td><?php echo $row['date_crea']; ?></td>
+	 </tr>
+	 <?php
+	  foreach($donnees as $row)
+	  {
+	  ?><tr>
+		   <td><?php echo $row['nom']; ?></td>
+		   <td><?php echo $row['prenom']; ?></td>
+		   <td><?php echo $row['sujet']; ?></td>
+		   <td><?php echo $row['message']; ?></td>
+		   <td><?php echo $row['email']; ?></td>
+   		   <td><?php echo $row['date_crea']; ?></td>
 	  </tr>
 	  <?php
-		}
-	  }
-	  if ($isVu == 0) {
-	  	echo "Il n'y a pas de récente Notification.";
 	  }
 	 ?>
 	</table>

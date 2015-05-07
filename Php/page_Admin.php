@@ -21,7 +21,7 @@ try
 	  {
 	  ?>
 	  <div class="row">
-		  <div class="col-sm-6 col-md-4 text-center" id="ZAddecal">
+		  <div class="col-sm-6 col-md-4" id="ZAddecal">
 		    <div class="thumbnail">
 		   <!--   <img src="..." alt="..."> pas d'image de la bdd pour le moment-->
 
@@ -34,8 +34,8 @@ try
 						<li class="list-group-item">Catégorie : <?php echo $row['categorie']; ?> </li>
 					</ul>
 			        <p class="text-center">
-				        <a href="?Adm&Upd" class="btn btn-warning" role="button">Modifier</a>
-				        <a href="?Adm&Dele" class="btn btn-danger" role="button">Supprimer</a>
+				        <a href="?Adm&Upd"  class="btn btn-warning" role="button">Modifier</a>
+				        <a href="?Adm&Dele" class="btn btn-danger"  role="button">Supprimer</a>
 			    	</p>
 			    </div>
 		    </div>

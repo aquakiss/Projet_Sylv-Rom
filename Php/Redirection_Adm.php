@@ -20,7 +20,11 @@
 	}
 	elseif (isset($_GET["Notif"])) 
 	{
-		include("Php/page_notification.php"); //page d'affichage des notifications de la page contact
+		include("Php/page_notification.php"); //page d'affichage des notifications non vu de la page contact
+	}
+	elseif (isset($_GET["AllNotif"])) 
+	{
+		include("Php/page_ALLnotification.php"); //page d'affichage de toutes les notifications de la page contact
 	}
 	else
 	{
