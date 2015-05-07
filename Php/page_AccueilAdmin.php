@@ -10,7 +10,7 @@
 		 	<li class="AccAdm" role="presentation"><a href="?Adm&Upd"		 class="btn btn-warning" role="button">Modifier une entreprise aux choix</a></li>
 		 	<li class="AccAdm" role="presentation"><a href="?Adm&Dele"  	 class="btn btn-danger"  role="button">Supprimer une entreprise aux choix</a></li>
 		 	<li class="AccAdm" role="presentation"><a href="?Adm&Notif" 	 class="btn btn-info"    role="button">Voir les récentes notifications</a></li>
-		 	<li class="AccAdm" role="presentation"><a href="?Adm&ALLNotif"   class="btn btn-info"    role="button">Voir toutes les notifications</a></li>
+		 	<li class="AccAdm" role="presentation"><a href="?Adm&AllNotif"   class="btn btn-info"    role="button">Voir toutes les notifications</a></li>
 		</ul>
 	</section></p>	  
 </div>

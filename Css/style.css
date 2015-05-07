@@ -98,11 +98,13 @@
 /** Page Admin **/
 #ZAddecal{
 	margin-top: 10px;
-	margin-left: 40%;
+	margin-left: 35%;
 }
 /** Acc_Accueil **/
 .AccAdm{
-	margin-left: 0.4%;
+	margin-left: 1%;
+}
+
 .centered-form .panel {
     background: rgba(255, 255, 255, 0.8);
     box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;

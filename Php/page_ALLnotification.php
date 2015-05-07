@@ -1,6 +1,6 @@
 <!-- page d'affichage des notification de la table contact-->
 <div>
-	<h1 class="text-center"><blockquote>Récentes cocou notifications :</blockquote></h1>  
+	<h1 class="text-center color"><blockquote>Toutes les notifications existantes :</blockquote></h1>  
 </div>
 
 <?php
@@ -20,7 +20,7 @@ try
 	$donnees = $reponse->fetchAll();
 ?>
 <div class="table-responsive">
-  <table class="table">
+  <table class="table color">
  	<tr>
   		<td><i><u>Nom: </i></td>
   		<td><i><u>Prenom: </u></i></td>
@@ -28,6 +28,7 @@ try
  		<td><i><u>Message: </u></i></td>
  		<td><i><u>Email: </u></i></td>
  		<td><i><u>Date: </u></i></td>
+ 		<td><i><u>Nouveau: </u></i></td>
 
 	 </tr>
 	 <?php
@@ -40,6 +41,18 @@ try
 		   <td><?php echo $row['message']; ?></td>
 		   <td><?php echo $row['email']; ?></td>
    		   <td><?php echo $row['date_crea']; ?></td>
+   		<?php
+   			if($row['vue'] == 0){
+   				?>
+   				<td>Oui</td>
+   				<?php
+   			}
+   			else{
+   				?>
+   				<td>Ancien</td>
+   				<?php
+   			}
+   			?>
 	  </tr>
 	  <?php
 	  }
