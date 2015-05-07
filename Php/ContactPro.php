@@ -55,9 +55,9 @@
 }
 </style>
 
-<?php /*
+<?php 
 	// connexion a la bdd
-	if(!empty($_POST["name"]) && !empty($_POST["firstname"]) && !empty($_POST["sujet"]) && !empty($_POST["comment"]))
+	if(!empty($_POST["last_name"]) && !empty($_POST["first_name"]) && !empty($_POST["sujet"]) && !empty($_POST["message"]) && !empty($_POST["email"]))
 	//test si les champs ne sont pas vide
 	{
 	try
@@ -71,19 +71,21 @@
 		die();
 	}
 	// assignation des name a des variable pour etre rentre dans la bdd
-	$nomdPerson          = $_POST["name"]; //champ nom
-	$pnomPerson          = $_POST["firstname"]; //champ prenom
+	$nomdPerson          = $_POST["last_name"]; //champ nom
+	$pnomPerson          = $_POST["first_name"]; //champ prenom
 	$SujPerson            = $_POST["sujet"]; //champ sujet
-	$txtcomentairePerson = $_POST["comment"]; // textarea des commentaire
+	$txtcomentairePerson = $_POST["message"]; // textarea des commentaire
+    $EmPerson            = $_POST["email"];
 	
 	//Insertion données dans bdd
-	$rtotot = $connexion->prepare("INSERT INTO contact(Nom, Prenom, Sujet, Commentaire, date_crea)
-								VALUES(:nom, :prenom, :sujet, :message, NOW())");
+	$rtotot = $connexion->prepare("INSERT INTO contact(Nom, Prenom, Sujet, Message, date_crea, email)
+								VALUES(:nom, :prenom, :sujet, :message, NOW(), :email)");
 	$rtotot->execute(array(
 		'nom' 	 	  => $nomdPerson,
 		'prenom' 	  => $pnomPerson,
 		'sujet'	 	  => $SujPerson,
 		'message' => $txtcomentairePerson,
+        'email' => $EmPerson
 	));
 		echo 'Votre message a bien été reçu.'; //apres envoie montre a la personne que l'envoie c'est bien fait
 	}

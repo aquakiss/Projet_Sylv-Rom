@@ -11,11 +11,11 @@
 	{
 	 	include("Php/ContactPro.php");  // page du formulaire de contact
 	}
-<<<<<<< HEAD
-	elseif (isset($_GET["entreprise"])) 
+
+	elseif(isset($_GET["entreprise"])) 
 	{
 		include("Php/Fiche_Entreprise.php"); //page fiche de l'entreprise
-=======
+
 	elseif(isset($_GET["internat"]))
 	{
 	 	include("Php/Internationale.php");  // page du recherche internationale
@@ -43,7 +43,6 @@
 	elseif (isset($_GET["parten"]))
 	{
 		include("Php/page_Entpart.php");   // page des entreprises partenaires
->>>>>>> origin/master
 	}
 	else{
 		include("Php/accueil.php"); // par défault page d'acceuil.
