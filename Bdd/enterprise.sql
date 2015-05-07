@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 07 Mai 2015 à 14:13
+-- Généré le :  Jeu 07 Mai 2015 à 17:34
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -23,17 +23,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
+  `mdp` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `admin`
+--
+
+INSERT INTO `admin` (`id`, `nom`, `mdp`) VALUES
+(1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `contact`
 --
 
 CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
   `sujet` varchar(252) NOT NULL,
   `message` varchar(500) NOT NULL,
   `date_crea` datetime NOT NULL,
-  `email` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `email` varchar(150) NOT NULL,
+  `vue` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `nom`, `prenom`, `sujet`, `message`, `date_crea`, `email`, `vue`) VALUES
+(1, 'trety', 'dfgh', 'rftghgj', 'fgh', '2015-05-07 14:39:20', 'toto@toto.fr', 0),
+(2, 'trety', 'dfgh', 'rftghgj', 'fgh', '2015-05-07 15:50:57', 'toto@toto.fr', 0);
 
 -- --------------------------------------------------------
 
@@ -96,6 +127,7 @@ CREATE TABLE IF NOT EXISTS `laboratoire` (
 --
 
 INSERT INTO `laboratoire` (`id_entreprise`, `nom`) VALUES
+(1, 'Pyromanci'),
 (1, 'Pyromanci');
 
 -- --------------------------------------------------------
@@ -114,6 +146,7 @@ CREATE TABLE IF NOT EXISTS `metiers` (
 --
 
 INSERT INTO `metiers` (`id`, `nom`) VALUES
+(1, 'pyromancien'),
 (1, 'pyromancien');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
