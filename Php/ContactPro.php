@@ -7,7 +7,7 @@
                         <h3 class="panel-title text-center">Nous Contacter</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="POST" action="">
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
@@ -56,40 +56,35 @@
 </style>
 
 <?php 
-	// connexion a la bdd
-	if(!empty($_POST["last_name"]) && !empty($_POST["first_name"]) && !empty($_POST["sujet"]) && !empty($_POST["message"]) && !empty($_POST["email"]))
-	//test si les champs ne sont pas vide
-	{
-	try
-	{
-		$connexion = new PDO("mysql:host=localhost;dbname=controledecembre","root","");
-		$connexion->query("SET NAMES UTF8");
-	}
-	catch (PDOException $e)
-	{
-		echo 'Echec lors de la tentative de connexion à la Base de donées' . $e->getMessage();
-		die();
-	}
-	// assignation des name a des variable pour etre rentre dans la bdd
-	$nomdPerson          = $_POST["last_name"]; //champ nom
-	$pnomPerson          = $_POST["first_name"]; //champ prenom
-	$SujPerson            = $_POST["sujet"]; //champ sujet
-	$txtcomentairePerson = $_POST["message"]; // textarea des commentaire
+    if(!empty($_POST["last_name"]) && !empty($_POST["first_name"]) && !empty($_POST["sujet"]) && !empty($_POST["message"]) && !empty($_POST["email"]))
+    //test si les champs ne sont pas vide
+    {
+    // assignation des name a des variable pour etre rentre dans la bdd
+    $nomdPerson          = $_POST["last_name"]; //champ nom
+    $pnomPerson          = $_POST["first_name"]; //champ prenom
+    $SujPerson            = $_POST["sujet"]; //champ sujet
+    $txtcomentairePerson = $_POST["message"]; // textarea des commentaire
     $EmPerson            = $_POST["email"];
-	
-	//Insertion données dans bdd
-	$rtotot = $connexion->prepare("INSERT INTO contact(Nom, Prenom, Sujet, Message, date_crea, email)
-								VALUES(:nom, :prenom, :sujet, :message, datetime, :email)");
-	$rtotot->execute(array(
-		'nom' 	 	  => $nomdPerson,
-		'prenom' 	  => $pnomPerson,
-		'sujet'	 	  => $SujPerson,
-		'message' => $txtcomentairePerson,
+    
+    //Insertion données dans bdd
+    $rtotot = $connexion->prepare("INSERT INTO contact(nom, prenom, sujet, message, date_crea, email)
+                                VALUES(:nom, :prenom, :sujet, :message, NOW(), :email)");
+    $rtotot->execute(array(
+        'nom'         => $nomdPerson,
+        'prenom'      => $pnomPerson,
+        'sujet'       => $SujPerson,
+        'message' => $txtcomentairePerson,
         'email' => $EmPerson
-	));
-		echo 'Votre message a bien été reçu.'; //apres envoie montre a la personne que l'envoie c'est bien fait
-	}
-	else {
-		echo 'Rentre des valeurs svp.'; //informe l'utilisateur qu'il manque un/des champs a remplir
-	}		 
+    ));
+        echo 'Votre message a bien été reçu.'; //apres envoie montre a la personne que l'envoie c'est bien fait
+    }
+    else {
+        echo 'Rentre des valeurs svp.'; //informe l'utilisateur qu'il manque un/des champs a remplir
+    }     
+    ));
+        echo 'Votre message a bien été reçu.'; //apres envoie montre a la personne que l'envoie c'est bien fait
+    }
+    else {
+        echo 'Rentre des valeurs svp.'; //informe l'utilisateur qu'il manque un/des champs a remplir
+    }                                            
 ?>
