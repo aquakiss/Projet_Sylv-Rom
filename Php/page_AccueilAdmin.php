@@ -1,6 +1,6 @@
 <!-- page accueil Admin -->
 <div style="margin-bottom:10px;">
-	<h1 class="text-center" id="ZAdColorh1"><blockquote>
+	<h1 class="text-center color"><blockquote>
 		Gestion des Entreprises: 
 	</blockquote></h1>
 	<p><section>
