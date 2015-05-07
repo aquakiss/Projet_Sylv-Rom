@@ -18,6 +18,10 @@
 	{
 	 	include("Php/page_Admin.php");  // page de suppression enterprise
 	}
+	elseif (isset($_GET["Notif"])) 
+	{
+		include("Php/page_notification.php"); //page d'affichage des notifications de la page contact
+	}
 	else
 	{
 	 	include("Php/page_Admin.php");  // page de l'admin

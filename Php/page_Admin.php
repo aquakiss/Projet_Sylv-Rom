@@ -21,7 +21,7 @@ try
 	  {
 	  ?>
 	  <div class="row">
-		  <div class="col-sm-6 col-md-4" id="ZAddecal">
+		  <div class="col-sm-6 col-md-4 text-center" id="ZAddecal">
 		    <div class="thumbnail">
 		   <!--   <img src="..." alt="..."> pas d'image de la bdd pour le moment-->
 

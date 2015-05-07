@@ -5,10 +5,11 @@
 	</blockquote></h1>
 	<p><section>
 		<ul class="nav nav-pills">
-			<li role="presentation"><a href="?Adm&Acc" class="btn btn-success" role="button">Zone d'Administration</a></li>
-			<li role="presentation"><a href="?Adm&Add" class="btn btn-primary" role="button">Ajouter une entreprise</a></li>
-		 	<li role="presentation"><a href="?Adm&Upd" class="btn btn-warning" role="button">Modifier une entreprise aux choix</a></li>
+			<li role="presentation"><a href="?Adm&Acc"  class="btn btn-success" role="button">Zone d'Administration</a></li>
+			<li role="presentation"><a href="?Adm&Add"  class="btn btn-primary" role="button">Ajouter une entreprise</a></li>
+		 	<li role="presentation"><a href="?Adm&Upd"  class="btn btn-warning" role="button">Modifier une entreprise aux choix</a></li>
 		 	<li role="presentation"><a href="?Adm&Dele" class="btn btn-danger" role="button">Supprimer une entreprise aux choix</a></li>
+		 	<li role="presentation"><a href="?Adm&Notif" class="btn btn-info"   role="button">Voir les récentes notifications</a></li>
 		</ul>
 	</section></p>	  
 </div>

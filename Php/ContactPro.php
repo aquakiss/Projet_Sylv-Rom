@@ -91,6 +91,5 @@
 	}
 	else {
 		echo 'Rentre des valeurs svp.'; //informe l'utilisateur qu'il manque un/des champs a remplir
-	}											 
-	
+	}		 
 ?>
