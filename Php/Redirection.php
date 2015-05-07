@@ -36,10 +36,6 @@
 	{
 	 	include("Php/page_coAdm.php");  // page de connection de l'admin
 	}
-	elseif(isset($_GET["Adm"]))
-	{
-	 	include("page_AccueilAdmin.php");  // page de l'admin
-	}
 	elseif (isset($_GET["parten"]))
 	{
 		include("Php/page_Entpart.php");   // page des entreprises partenaires

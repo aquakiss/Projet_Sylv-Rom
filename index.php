@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	try
 	{
 		$connexion = new PDO('mysql:host=localhost;dbname=enterprise', 'root', '');
@@ -64,6 +65,10 @@
 
 	<body>
 		<div>
+			<?php
+			if(!$_SESSION)
+			{
+			?>
 			<nav class="navbar navbar-default">
 
 			  <div class="container-fluid">
@@ -88,7 +93,7 @@
 			        <button name="search" type="submit" class="btn btn-default">Recherche</button>
 			      </form>
 			      <ul class="nav navbar-nav navbar-right">
-			      	<li><a href="?CoAdm">Connexion</a></li>
+	      			<li><a href="?CoAdm">Connexion</a></li>
 			        <li><a href="#">À propos</a></li>
 			        <li><a href="?contactPro">Nous Contacter</a></li> <!-- mettre un id pour décaller vers la gauche -->
 			      </ul>
@@ -96,14 +101,51 @@
 
 			  </div><!-- /.container-fluid -->
 			</nav>
+			<?php
+			}
+			elseif($_SESSION)
+			{
+			?>
+				<nav class="navbar navbar-default">
+
+			  <div class="container-fluid">
+
+			    <!-- Brand and toggle get grouped for better mobile display -->
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			      	<li  role="presentation"><a href="?Adm&Acc" >Zone d'Administration</a></li>
+			        <li role="presentation"><a href="?Adm&Add" >Ajouter entreprise</a></li>
+			        <li role="presentation"><a href="?Adm&Upd"	>Modifier entreprise</a></li>
+				 	<li role="presentation"><a href="?Adm&Dele" >Supprimer entreprise</a></li>
+				 	<li role="presentation"><a href="?Adm&Notif">récentes notifications</a></li>
+				 	<li role="presentation"><a href="?Adm&ALLNotif">toutes les notifications</a></li>
+			      </ul>
+			      <ul class="nav navbar-nav navbar-right">
+	      			<li><a href="?DecoAdm">Déconnexion</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+
+			  </div><!-- /.container-fluid -->
+			</nav>
+			<?php
+			}
+			?>
 		</div>
 		<div>
 			<?php
-				if($valide){
-					include("Php/result_rec.php");
+				if(!$_SESSION)
+				{
+					if($valide){
+						include("Php/result_rec.php");
+					}
+					else{
+						include("Php/redirection.php"); // redirection des pages en fonction des ?...
+					}
 				}
-				else{
-					include("Php/redirection.php"); // redirection des pages en fonction des ?...
+				elseif($_SESSION){
+					include("Php/Redirection_Adm.php");
 				}
 			?>
 		</div>

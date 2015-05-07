@@ -26,6 +26,11 @@
 	{
 		include("Php/page_ALLnotification.php"); //page d'affichage de toutes les notifications de la page contact
 	}
+	elseif(isset($_GET["DecoAdm"]))
+	{
+		unset($_SESSION["newsession"]);
+		header('Location: index.php');
+	}
 	else
 	{
 	 	include("Php/page_Admin.php");  // page de l'admin
