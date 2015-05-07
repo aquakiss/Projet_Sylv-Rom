@@ -13,7 +13,7 @@
 					<input name="mdp"  type="text" required="required" class="form-control" placeholder="Mot de Passe">
 				</div>
 				<br>
-				<button type="submit" class="btn btn-default navbar-btn">Connection</button>
+				<button type="submit" class="btn btn-default navbar-btn">Connexion</button>
 			</section>
 		</fieldset>
 	</form>	
@@ -23,41 +23,18 @@
 	if(!empty($_POST["ident"]) && !empty($_POST["mdp"]))
 	//test si les champs ne sont pas vide
 	{
-		try
-		{
-			$connexion = new PDO("mysql:host=localhost;dbname=enterprise","root","");
-			$connexion->query("SET NAMES UTF8");
+		//echo "Login valide";	
+		$nom  = $_POST["ident"]; //champ nom
+		$mdp = $_POST["mdp"]; //champ prenom
+		$req = $connexion->prepare("SELECT nom, mdp FROM admin WHERE nom = :nom AND mdp = :mdp");
+		$req->execute(array(
+			'nom' => $nom,
+			'mdp' => $mdp
+		));
+		if(count($req)){
+			session_start();
+			$_SESSION["newsession"]=1;
+			header("Location: ?Adm");
 		}
-		catch (PDOException $e)
-		{
-			echo 'Echec lors de la tentative de connexion à la Base de donées' .''. $e->getMessage();
-			die();
-		}
-
-	//echo "Login valide";	
-	$id  = $_POST["ident"]; //champ nom
-	$mDp = $_POST["mdp"]; //champ prenom
-	
-/* vérification des logs et création d'un $_Session pas réussit à faire cette partie.
-	$reponse = $connexion->prepare('SELECT AdminId, MdP  FROM admon WHERE AdminId = :ident');
-
-    $query->bindValue(':ident',$_POST['ident'], PDO::PARAM_STR);
-    $query->execute();
-    $data=$query->fetch();
-    if ($data['MdP'] == md5($_POST['mdp'])) // Acces OK !
-    {
-        $_SESSION['pseudo'] = $data['membre_pseudo'];
-        $_SESSION['level'] = $data['membre_rang'];
-        $_SESSION['id'] = $data['membre_id'];
-        $message = '<p>Bienvenue '.$data['AdminId'].', 
-            vous êtes maintenant connecté!</p>';  
-    }
-    else // Acces pas OK !
-    {
-        $message = '<p>Une erreur s\'est produite 
-        pendant votre identification.<br /> Le mot de passe ou le pseudo 
-            entré n\'est pas correcte.</p>';
-    } 
-    $query->CloseCursor(); */
 	}
 ?>
