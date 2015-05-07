@@ -88,6 +88,7 @@
 			        <button name="search" type="submit" class="btn btn-default">Recherche</button>
 			      </form>
 			      <ul class="nav navbar-nav navbar-right">
+			      	<li><a href="?CoAdm">Connexion</a></li>
 			        <li><a href="#">À propos</a></li>
 			        <li><a href="?contactPro">Nous Contacter</a></li> <!-- mettre un id pour décaller vers la gauche -->
 			      </ul>

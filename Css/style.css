@@ -1,3 +1,7 @@
+.color{
+	color:black;
+}
+
 /** Accueil **/
 #Ent_div {
 	width: 5px;
@@ -71,6 +75,7 @@
 	margin-left: 12%;
 	margin-top: 0.5%;
 	padding: 0.2%;
+}
 
 #h2Domaindiv{
 	float: right;
@@ -81,6 +86,15 @@
 	padding: 0.2%;
 }
 
+
+/* Contact Pro */
+
+.centered-form {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+
 /** Page Admin **/
 #ZAddecal{
 	margin-top: 10px;
@@ -89,4 +103,25 @@
 /** Acc_Accueil **/
 .AccAdm{
 	margin-left: 0.4%;
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+
+/* Fiche entreprise */
+
+#Titre_entreprise{
+	color:black; 
+	text-align:center;
+}
+
+#Info_entreprise{
+	color:black;
+	margin-top:100px;
+}
+
+.Infos_entreprise{
+	color:black;
+	margin-top:50px;
 }

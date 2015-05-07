@@ -41,20 +41,6 @@
         </div>
     </div>
 
-<style>
-
-
-.centered-form {
-    margin-top: 120px;
-    margin-bottom: 120px;
-}
-
-.centered-form .panel {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
-}
-</style>
-
 <?php 
     if(!empty($_POST["last_name"]) && !empty($_POST["first_name"]) && !empty($_POST["sujet"]) && !empty($_POST["message"]) && !empty($_POST["email"]))
     //test si les champs ne sont pas vide
@@ -80,11 +66,5 @@
     }
     else {
         echo 'Rentre des valeurs svp.'; //informe l'utilisateur qu'il manque un/des champs a remplir
-    }     
-    ));
-        echo 'Votre message a bien été reçu.'; //apres envoie montre a la personne que l'envoie c'est bien fait
-    }
-    else {
-        echo 'Rentre des valeurs svp.'; //informe l'utilisateur qu'il manque un/des champs a remplir
-    }                                            
+    }                                               
 ?>

@@ -19,7 +19,7 @@ try
 	$donnees = $reponse->fetchAll();
 ?>
 <div class="table-responsive">
-  <table class="table">
+  <table class="table color">
  	<tr>
   		<td><i><u>Nom: </i></td>
   		<td><i><u>Prenom: </u></i></td>
