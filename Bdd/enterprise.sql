@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 08 Avril 2015 à 10:36
+-- Généré le :  Jeu 07 Mai 2015 à 14:13
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -23,6 +23,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `contact`
+--
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `sujet` varchar(252) NOT NULL,
+  `message` varchar(500) NOT NULL,
+  `date_crea` datetime NOT NULL,
+  `email` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `entreprise`
 --
 
@@ -37,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `presentation` varchar(255) NOT NULL,
   `lien_interview` varchar(255) NOT NULL,
   `international` tinyint(1) NOT NULL,
+  `partenaire` int(11) NOT NULL COMMENT 'partenaire au site',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
@@ -44,10 +60,11 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 -- Contenu de la table `entreprise`
 --
 
-INSERT INTO `entreprise` (`id`, `nom`, `nb_employe`, `departement`, `domaine`, `categorie`, `description`, `presentation`, `lien_interview`, `international`) VALUES
-(1, 'L''Oréal', 75000, 'charleaner', 'Cosmétique', 'Bio', '', 'L’Oréal est un groupe industriel français de produits cosmétiques.', '', 1),
-(3, 'Biorg', 22, 'Creux et vide', 'Moléculaire', 'Chimie', '', '', '', 0),
-(4, 'Hanculus', 5, 'aquinaik', 'Informatique', 'Informatique', '', '', '', 0);
+INSERT INTO `entreprise` (`id`, `nom`, `nb_employe`, `departement`, `domaine`, `categorie`, `description`, `presentation`, `lien_interview`, `international`, `partenaire`) VALUES
+(1, 'L''Oréal', 75000, 'charleaner', 'Cosmétique', 'Bio', '', 'L’Oréal est un groupe industriel français de produits cosmétiques.', '', 1, 0),
+(2, 'test', 2500, 'aquitaik', 'Biologie-Organique', 'yolo', 'non non rien a changer', 'oups', 'www.oups.com', 1, 0),
+(3, 'Biorg', 22, 'Creux et vide', 'Moléculaire', 'Chimie', '', '', '', 0, 0),
+(4, 'Hanculus', 5, 'aquinaik', 'Informatique', 'Informatique', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 

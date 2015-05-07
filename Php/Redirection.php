@@ -15,7 +15,7 @@
 	elseif(isset($_GET["entreprise"])) 
 	{
 		include("Php/Fiche_Entreprise.php"); //page fiche de l'entreprise
-
+	}
 	elseif(isset($_GET["internat"]))
 	{
 	 	include("Php/Internationale.php");  // page du recherche internationale
