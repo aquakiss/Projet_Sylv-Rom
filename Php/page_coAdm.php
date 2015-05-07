@@ -32,7 +32,6 @@
 			'mdp' => $mdp
 		));
 		if(count($req)){
-			session_start();
 			$_SESSION["newsession"]=1;
 			header("Location: ?Adm");
 		}
