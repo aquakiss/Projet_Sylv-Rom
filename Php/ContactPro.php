@@ -79,7 +79,7 @@
 	
 	//Insertion données dans bdd
 	$rtotot = $connexion->prepare("INSERT INTO contact(Nom, Prenom, Sujet, Message, date_crea, email)
-								VALUES(:nom, :prenom, :sujet, :message, NOW(), :email)");
+								VALUES(:nom, :prenom, :sujet, :message, datetime, :email)");
 	$rtotot->execute(array(
 		'nom' 	 	  => $nomdPerson,
 		'prenom' 	  => $pnomPerson,
@@ -92,5 +92,5 @@
 	else {
 		echo 'Rentre des valeurs svp.'; //informe l'utilisateur qu'il manque un/des champs a remplir
 	}											 
-	*/
+	
 ?>
