@@ -10,7 +10,7 @@
 				<br>
 				<div class="input-group">
 					<span class="input-group-addon">Mot de passe: </span>
-					<input name="mdp"  type="text" required="required" class="form-control" placeholder="Mot de Passe">
+					<input name="mdp"  type="password" required="required" class="form-control" placeholder="Mot de Passe">
 				</div>
 				<br>
 				<button type="submit" class="btn btn-default navbar-btn">Connexion</button>
