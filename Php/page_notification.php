@@ -2,21 +2,24 @@
 <div>
 	<h1 class="text-center color"><blockquote>Récentes notifications :</blockquote></h1> 		
 </div>
+
 <?php
-try
-	{
-		$connexion = new PDO("mysql:host=localhost;dbname=enterprise","root","");
-		$connexion->query("SET NAMES UTF8");
+	if(isset($_GET["Adm&Notif"])){
+		$id = $_GET["Adm&Notif"];
+		$req = $connexion->prepare("UPDATE contact SET vue = '1' WHERE id = :id");
+		$req->execute(array(
+				'id' => $id
+		));
 	}
-	catch (PDOException $e)
-	{
-		echo 'Echec lors de la tentative de connexion à la Base de donées' . $e->getMessage();
-		die();
-	}
+
+
+
 	//recupere les differents champs de la table contact par ordre de la plus résente date
 	 $reponse = $connexion->query('SELECT *  FROM contact ORDER BY date_crea DESC');
 	 
 	$donnees = $reponse->fetchAll();
+
+
 ?>
 <div class="table-responsive">
   <table class="table color">
@@ -42,7 +45,7 @@ try
 			   	<td><?php echo $row['message']; ?></td>
 			   	<td><?php echo $row['email']; ?></td>
 				<td><?php echo $row['date_crea']; ?></td>
-				<td><a class="btn btn-info" role="button">Vu</a></td>
+				<td><a href="?Adm&Notif=<?php echo $row['id'] ?>" class="btn btn-info" role="button">Vu</a></td>
 			</tr>
 	  	<?php
 		}
