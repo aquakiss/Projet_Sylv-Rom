@@ -9,7 +9,7 @@ jQuery(document).ready(function()
 			url: "Php/AaZ.php",
 		}).done(function(result)
 		{
-	    	jQuery("#divEntre").html(result);
+	    	jQuery("#divEntreG").html(result);
 		});
 	});
 
@@ -21,7 +21,7 @@ jQuery(document).ready(function()
 		jQuery.ajax({
 			url: "Php/ParDomaine.php",
 			}).done(function(result){
-	        	jQuery("#divEntre").html(result);
+	        	jQuery("#divEntreD").html(result);
  			});
 		});
 });

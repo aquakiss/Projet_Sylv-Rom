@@ -37,9 +37,7 @@ foreach ($donnees as $donnee) {
 					<h2 id="h2AtooZ"><?php echo $donnee['nom']; ?></h2>
 					<p>
 						<a href="?Accueil"><i class="fa fa-fw fa-home"></i></a>
-						<a href="?departs"><i class="fa fa-fw fa-heart"></i></a>
-						<a href="#"><i class="fa fa-fw fa-share"></i></a>
-						<a href="#"><i class="fa fa-fw fa-tags"></i></a>
+						<a href="?departs"><i class="fa fa-fw fa-share"></i></a>
 					</p>
 				</figcaption>			
 			</figure>

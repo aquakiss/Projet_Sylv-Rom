@@ -26,8 +26,12 @@
 }
 
 /** Entreprise **/
-#divEntre {
+#divEntreG {
 	margin-top: 1%; 
+}
+#divEntreD {
+	margin-top: 1%;
+	margin-left: 30%; 
 }
 #atooz {
 	background-color: #CBD3D3;
