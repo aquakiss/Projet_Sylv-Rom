@@ -35,7 +35,9 @@ try
 					</ul>
 			        <p class="text-center">
 				        <a href="?Adm&Upd"  class="btn btn-warning" role="button">Modifier</a>
+				        <!-- <a href="?Adm&Upd=<?php echo $row['id'] ?>"  class="btn btn-warning" role="button">Modifier</a> recupere l'id puis quand on arrive sur la page de modification le formulaire est rempli avec les données de l'entrepirse en fonction de l'id passé non fonctionnel-->
 				        <a href="?Adm&Dele" class="btn btn-danger"  role="button">Supprimer</a>
+				        <!-- <a href="?Adm&Dele=<?php echo $row['id'] ?>" class="btn btn-danger"  role="button">Supprimer</a> recupere l'id puis on supprime l'entreprise en fonction de l'id passé Non fonctionnel-->
 			    	</p>
 			    </div>
 		    </div>

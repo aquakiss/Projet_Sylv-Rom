@@ -119,7 +119,7 @@
 			        <li role="presentation"><a href="?Adm&Upd"	>Modifier entreprise</a></li>
 				 	<li role="presentation"><a href="?Adm&Dele" >Supprimer entreprise</a></li>
 				 	<li role="presentation"><a href="?Adm&Notif">récentes notifications</a></li>
-				 	<li role="presentation"><a href="?Adm&ALLNotif">toutes les notifications</a></li>
+				 	<li role="presentation"><a href="?Adm&AllNotif">toutes les notifications</a></li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 	      			<li><a href="?DecoAdm">Déconnexion</a></li>
