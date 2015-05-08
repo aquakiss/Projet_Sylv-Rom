@@ -49,7 +49,8 @@ try
 	}
 	if($nb_partenaire == 0){
 	?>
-		<h1 id="PatColorh1"> Nous n'avons pas encore de Partenaire, pour toute demande de partenariat veuillez remplir le formulaire de Contact.<br><b>Cordialement la direction.</b></h1>
+		<h2 class="color"> Nous n'avons pas encore de Partenaire, pour toute demande de partenariat veuillez remplir le formulaire de Contact.<br></h1>
+		<h4 class="text-center color"><b><em><ins>Cordialement la direction.</ins></em></b></h4>
 	<?php
 	}
 	?>

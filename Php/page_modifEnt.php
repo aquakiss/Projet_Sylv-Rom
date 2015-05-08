@@ -1,52 +1,77 @@
-<!-- Page de d'une entreprise -->
+<!-- Page de modif d'une entreprise -->
 <div>
-	<form method="post" role="form">
+	<h1 class="text-center color"><blockquote>
+		Modification d'une Entreprise: 
+	</blockquote></h1>
+	<form enctype="multipart/form-data" method="post" role="form">
 		<fieldset>
 			<section id="contourformPDC">
 				<div class="input-group">
-					<span class="input-group-addon">Id etudiant: </span>
-					<input name="ident" type="text" required="required" class="form-control" placeholder="Ex: 1">
-				</div>
-				<br>
-				<div class="input-group">
 					<span class="input-group-addon">Nom: </span>
-					<input name="nam" type="text" required="required" class="form-control" placeholder="Ex: Martin">
+					<input name="nam" type="text" required="required" class="form-control" placeholder="Ex: Vichy">
 				</div>
 				<br>
 				<div class="input-group">
-					<span class="input-group-addon">Prenom: </span>
-					<input name="pre"  type="text" required="required" class="form-control" placeholder="Ex: Martin">
+					<span class="input-group-addon">Nombre d'employés: </span>
+					<input name="nb"  type="text" required="required" class="form-control" placeholder="ex: 2000">
 				</div>
 				<br>
 				<div class="input-group">
-					<span class="input-group-addon">Adresse: </span>
-					<input name="addr"  type="text" required="required" class="form-control" placeholder="Ex: 3, rue des biscuits">
+					<span class="input-group-addon">Département: </span>
+					<input name="dept"  type="text" required="required" class="form-control" placeholder="ex: Aquitaine">
 				</div>
 				<br>
 				<div class="input-group">
-					<span class="input-group-addon">Classe: </span>
-					<input name="clas"  type="text" required="required" class="form-control" placeholder="Ex: CP12">
+					<span class="input-group-addon">Domaine: </span>
+					<input name="dom"  type="text" required="required" class="form-control" placeholder="ex: Biologie">
 				</div>
 				<br>
 				<div class="input-group">
-					<span class="input-group-addon">Numero de Telephone: </span>
-					<input name="mobil"  type="text" required="required" class="form-control" placeholder="Ex: 0631901580">
+					<span class="input-group-addon">Catégorie: </span>
+					<input name="cat"  type="text" required="required" class="form-control" placeholder="ex: Science">
 				</div>
-
 				<br>
-				<button type="submit" class="btn btn-default navbar-btn">Modification</button>
-				<p name="testP"></p>
+				<div class="input-group">
+					<span class="input-group-addon">Description: </span>
+					<input name="des"  type="text" required="required" class="form-control" placeholder="ex: blablabla">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon">Présentation: </span>
+					<input name="pres"  type="text" required="required" class="form-control" placeholder="ex: superbe statue">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon">Lien interview: </span>
+					<input name="lien"  type="text" required="required" class="form-control" placeholder="lien d'une interview de sylvain">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon">International: </span>
+					<input name="inter"  type="text" required="required" class="form-control" placeholder="oui ou non">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon">Partenaire: </span>
+					<input name="parte"  type="text" required="required" class="form-control" placeholder="si partenaire ou non">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon">Numero d'identifient: </span>
+					<input name="iden"  type="text" required="required" class="form-control" placeholder="ex: 1">
+				</div>					
+				<br>
+				<button type="submit" class="btn btn-default navbar-btn">Modifié</button>
 			</section>
 		</fieldset>
 	</form>	
 </div>
 
 <?php
-if(!empty($_POST["ident"]) && !empty($_POST["nam"]) && !empty($_POST["pre"]) && !empty($_POST["clas"]) && !empty($_POST["addr"]) && !empty($_POST["mobil"]))
-{
-    try
+if(!empty($_POST["nam"]) && !empty($_POST["iden"]) && !empty($_POST["nb"]) && !empty($_POST["dept"]) && !empty($_POST["dom"]) && !empty($_POST["cat"])  && !empty($_POST["des"]) && !empty($_POST["pres"]) && !empty($_POST["lien"]) && !empty($_POST["inter"]) && !empty($_POST["parte"])) {
+ try
 	{
-		$connexion = new PDO("mysql:host=localhost;dbname=tpannuaire","root","");
+		$connexion = new PDO("mysql:host=localhost;dbname=enterprise","root","");
 		$connexion->query("SET NAMES UTF8");
 	}
 	catch (PDOException $e)
@@ -54,24 +79,64 @@ if(!empty($_POST["ident"]) && !empty($_POST["nam"]) && !empty($_POST["pre"]) && 
 		echo 'Echec lors de la tentative de connexion à la Base de donées' . $e->getMessage();
 		die();
 	}
-	// recup des diff champs met dans des variables pour l'update dans bdd
-	$idd 		= $_POST["ident"];
+	// recup des diff champs met dans des variables pour insert dans bdd
 	$name 		= $_POST["nam"];
-	$prenome	= $_POST["pre"];
-	$clases		= $_POST["clas"];
-	$adre       = $_POST["addr"];
-	$numeroTele = $_POST["mobil"];
-	//insertion avec les champs rentrer
-	 $query = " UPDATE etudiant SET Nom = :name, Prenom = :pren, classe = :classs, adresse = :address, numeroTelephone = :numtel WHERE id = :ide "; 
-	 $param = array(
-	 	'ide' => $idd,
-	 	'name' => $name,
-	 	'pren' => $prenome,
-	 	'classs' => $clases,
-	 	'address' => $adre,
-	 	'numtel' => $numeroTele
+	$nbemploy	= $_POST["nb"];
+	$depta 		= $_POST["dept"];
+	$doma 		= $_POST["dom"];
+	$categ		= $_POST["cat"];
+	$descri 	= $_POST["des"];
+	$present 	= $_POST["pres"];
+	$llieninter = $_POST["lien"];
+	$idd 		= $_POST["iden"]; 
+
+	$isinternationale = 0;
+	if($_POST["inter"] == "oui")
+	{
+		$isinternationale = 1;
+	}
+	elseif ($_POST["inter"] == "non")
+	{
+		$isinternationale = 0;
+	}
+	else
+	{
+		$isinternationale = 0;
+	}
+
+	$ispartenaire	  = 0;
+	if($_POST["parte"] == "oui")
+	{
+		$ispartenaire = 1;
+	}
+	elseif ($_POST["parte"] == "non")
+	{
+		$ispartenaire = 0;
+	}
+	else
+	{
+		$ispartenaire = 0;
+	}
+
+	$partena  = $ispartenaire;
+	$internal = $isinternationale;
+
+	$query = "UPDATE entreprise SET nom = :nam, nb_employe = :emplo, departement = :depa, domaine = :domai, categorie = :catego, description = :descrip, presentation = :prese, lien_interview = :intvew, international = :inttl, partenaire = :partn WHERE id = :ide "; 
+
+	$param = array(
+	 	'nam' 		=> $name, 		
+		'emplo' 	=> $nbemploy,	
+		'depa' 		=> $depta,		
+		'domai' 	=> $doma, 		
+		'catego'	=> $categ,		
+		'descrip'	=> $descri, 	
+		'prese' 	=> $present, 	
+		'intvew' 	=> $llieninter,
+		'inttl' 	=> $internal, 	
+		'partn' 	=> $partena,
+		'ide' 		=> $idd 	
 	 	);
-	 $req = $connexion-> prepare($query);
-	 $req -> execute($param);
+	$req = $connexion-> prepare($query);
+	$req -> execute($param);
 }
 ?>

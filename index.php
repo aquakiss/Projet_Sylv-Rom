@@ -84,7 +84,7 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li><a href="#">Entreprises partenaires</a></li>
+			        <li><a href="?parten">Entreprises partenaires</a></li>
 			      </ul>
 			      <form class="navbar-form navbar-left" role="search" action="" method="GET">
 			        <div class="form-group">
@@ -94,7 +94,6 @@
 			      </form>
 			      <ul class="nav navbar-nav navbar-right">
 	      			<li><a href="?CoAdm">Connexion</a></li>
-			        <li><a href="#">À propos</a></li>
 			        <li><a href="?contactPro">Nous Contacter</a></li> <!-- mettre un id pour décaller vers la gauche -->
 			      </ul>
 			    </div><!-- /.navbar-collapse -->

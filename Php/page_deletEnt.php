@@ -1,23 +1,20 @@
 <!-- Page de d'une entreprise -->
 <div>
+	<h1 class="text-center color"><blockquote>
+		Suppression d'une Entreprise précise: 
+	</blockquote></h1>
 	<form method="post" role="form">
 		<fieldset>
 			<section id="contourformPDC">
 				<div class="input-group">
-					<span class="input-group-addon">Id etudiant: </span>
-					<input name="ident" type="text" required="required" class="form-control" placeholder="Ex: 1">
-				</div>
-				<br>
-				<div class="input-group">
 					<span class="input-group-addon">Nom: </span>
-					<input name="nam" type="text" required="required" class="form-control" placeholder="Ex: Martin">
+					<input name="nam" type="text" required="required" class="form-control" placeholder="Ex: Biorg">
 				</div>
 				<br>
 				<div class="input-group">
-					<span class="input-group-addon">Prenom: </span>
-					<input name="pre"  type="text" required="required" class="form-control" placeholder="Ex: Martin">
+					<span class="input-group-addon">Identifient: </span>
+					<input name="ident" type="text" required="required" class="form-control" placeholder="Ex: 85">
 				</div>
-
 				<br>
 				<button type="submit" class="btn btn-default navbar-btn">Suppression</button>
 				<p name="testP"></p>
@@ -27,11 +24,11 @@
 </div>
 
 <?php
-if(!empty($_POST["ident"]) && !empty($_POST["nam"]) && !empty($_POST["pre"]))
+if(!empty($_POST["ident"]) && !empty($_POST["nam"]))
 {
 	try
 	{
-		$connexion = new PDO("mysql:host=localhost;dbname=tpannuaire","root","");
+		$connexion = new PDO("mysql:host=localhost;dbname=enterprise","root","");
 		$connexion->query("SET NAMES UTF8");
 	}
 	catch (PDOException $e)
@@ -39,18 +36,16 @@ if(!empty($_POST["ident"]) && !empty($_POST["nam"]) && !empty($_POST["pre"]))
 		echo 'Echec lors de la tentative de connexion à la Base de donées' . $e->getMessage();
 		die();
 	}
-	// recup des diff champs met dans des variables pour l'update dans bdd
+	// recup des diff champs met dans des variables pour la delete dans bdd
 	$idd = $_POST["ident"];
 	$name = $_POST["nam"];
-	$prenome = $_POST["pre"];
 	//suppression grace aux champs rentrer
-	 $query= "DELETE FROM etudiant WHERE id = :ide AND Nom = :name AND Prenom = :pren ";
-	 $param = array(
-	 	'ide' => $idd,
-	 	'name' => $name,
-	 	'pren' => $prenome
-	 	);
-	 $req = $connexion-> prepare($query);
-	 $req -> execute($param);
+	$query= "DELETE FROM entreprise WHERE id = :ide AND Nom = :name";
+	$param = array(
+	 	'ide'  => $idd,
+	 	'name' => $name
+	);
+	$req = $connexion-> prepare($query);
+	$req -> execute($param);   
 }
 ?>
