@@ -4,8 +4,9 @@
 </div>
 
 <?php
-	if(isset($_GET["Adm&Notif"])){
-		$id = $_GET["Adm&Notif"];
+	echo $_GET["Notif"];
+	if(isset($_GET["Notif"])){
+		$id = $_GET["Notif"];
 		$req = $connexion->prepare("UPDATE contact SET vue = '1' WHERE id = :id");
 		$req->execute(array(
 				'id' => $id
@@ -45,14 +46,18 @@
 			   	<td><?php echo $row['message']; ?></td>
 			   	<td><?php echo $row['email']; ?></td>
 				<td><?php echo $row['date_crea']; ?></td>
-				<td><a href="?Adm&Notif=<?php echo $row['id'] ?>" class="btn btn-info" role="button">Vu</a></td>
+				<td><a href="?Adm&Notif= <?php echo $row['id'] ?>" class="btn btn-info">Vu</a></td>
 			</tr>
 	  	<?php
 		}
 	}
-	if ($isVu == 0) {
-		echo "Il n'y a pas de récente Notification.";
-	}
 		?>
 	</table>
 </div>
+<?php
+if ($isVu == 0) {
+	?>
+		<div class="color center">Il n'y a pas de récente Notifications.</div>
+	<?php
+	}
+?>
