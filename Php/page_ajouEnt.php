@@ -56,11 +56,11 @@
 					<input name="parte"  type="text" required="required" class="form-control" placeholder="si partenaire ou non">
 				</div>
 				<br>
-				<br>
+			<!--	<br>
 				<div class="input-group">
 					<input type="hidden" name="MAX_FILE_SIZE" value="250000" />
 					<input type="file" name="fic" size=50 />
-				</div>
+				</div> -->
 				
 				<br>
 				<button type="submit" class="btn btn-default navbar-btn">Créé</button>

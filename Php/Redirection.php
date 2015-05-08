@@ -16,9 +16,9 @@
 	{
 		include("Php/Fiche_Entreprise.php"); //page fiche de l'entreprise
 	}
-	elseif(isset($_GET["internat"]))
+	elseif(isset($_GET["domai"]))
 	{
-	 	include("Php/Internationale.php");  // page du recherche internationale
+	 	include("Php/domaine.php");  // page du recherche internationale
 	}
 	elseif(isset($_GET["departm"]))
 	{
